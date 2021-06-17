@@ -2,10 +2,10 @@
 
 This folder is for the first step of our proposed framework.
 
-This code is revised from the source code of [HoVerNet](https://github.com/vqdang/hover_net).
+This code is revised from the source code of [HoVerNet](https://github.com/vqdang/hover_net/tree/tensorflow-final).
 
 ## Set Up Environment
-Please set up your enviroment follow https://github.com/vqdang/hover_net
+Please set up your enviroment follow https://github.com/vqdang/hover_net/tree/tensorflow-final
 
 ## Usage
 Set up the file_path and out_dir in Demo.ipynb, and run it on jupter.
