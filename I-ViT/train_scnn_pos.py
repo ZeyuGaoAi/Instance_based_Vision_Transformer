@@ -37,6 +37,7 @@ def parse_args():
     parser.add_argument('--num_layers', type=int, default = 2)
     parser.add_argument('--img_size', type=int, default = 2000)
     parser.add_argument('--nuclues_size', type=int, default = 32)
+    parser.add_argument('--crop_path', default = '/home5/hby/PRCC/New_Data/crop/', help='path to crop_nuclues')
 
     parser.add_argument(
         '--num_classes',
@@ -188,19 +189,19 @@ def get_transform(train):
 
 
 
-def build_dataset_scnn(train_files, val_files, test_files, N, nuclues_size):
+def build_dataset_scnn(train_files, val_files, test_files, N, nuclues_size,crop_path):
     
-    train_data = load_prcc_dataset_scnn_pos(train_files, transform = get_transform, train = True, N = N, nuclues_size = nuclues_size)
+    train_data = load_prcc_dataset_scnn_pos(train_files, transform = get_transform, train = True, N = N, nuclues_size = nuclues_size, crop_path = crop_path)
     train_loader = torch.utils.data.DataLoader(
             train_data, batch_size=args.batch_size, shuffle=True,
             num_workers=args.num_workers, pin_memory=True)
     
-    val_data = load_prcc_dataset_scnn_pos(val_files, transform = get_transform, train = False, N = N, nuclues_size = nuclues_size)
+    val_data = load_prcc_dataset_scnn_pos(val_files, transform = get_transform, train = False, N = N, nuclues_size = nuclues_size, crop_path = crop_path)
     val_loader = torch.utils.data.DataLoader(
             val_data, batch_size=args.val_batch_size, shuffle=False,
             num_workers=args.num_workers, pin_memory=True)
     
-    test_data = load_prcc_dataset_scnn_pos(test_files, transform = get_transform, train = False, N = N, nuclues_size = nuclues_size)
+    test_data = load_prcc_dataset_scnn_pos(test_files, transform = get_transform, train = False, N = N, nuclues_size = nuclues_size, crop_path = crop_path)
     test_loader = torch.utils.data.DataLoader(
             test_data, batch_size=args.val_batch_size, shuffle=False,
             num_workers=args.num_workers, pin_memory=True)
@@ -364,7 +365,7 @@ def train_net(args):
     #train_loader, _, val_loader, _ = vit.build_dataloader(args)
     print('Number of Nuclei for each Patch={}'.format(args.num_nuclei))
     print('Training Set: %s. \n Valid Set: %s' % (args.train_dirs, args.val_dirs))
-    train_loader, val_loader, test_loader= build_dataset_scnn(args.train_dirs, args.val_dirs, args.test_dirs, args.num_nuclei,args.nuclues_size)
+    train_loader, val_loader, test_loader= build_dataset_scnn(args.train_dirs, args.val_dirs, args.test_dirs, args.num_nuclei,args.nuclues_size,args.crop_path)
     model = vit.build_model(args)
     print('Parameters:', sum([np.prod(p.size()) for p in model.parameters()]))
     model = torch.nn.DataParallel(model)

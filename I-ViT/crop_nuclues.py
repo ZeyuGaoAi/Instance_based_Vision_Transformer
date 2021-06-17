@@ -132,7 +132,7 @@ def deal(crop_size,path,mask_path,out_path,js):
         new_patch[:,:patch.shape[1], :patch.shape[2]] = patch
         patches.append(new_patch)
 
-    nucleus = {'nucleus':patches,'class_all':cls_all}
+    nucleus = {'nucleus':patches,'class_all':cls_all,'cls_xy':cls_xy,'cls_keep_xy':cls_keep_xy}
     sio.savemat(out_path, nucleus)
 
 
@@ -144,10 +144,12 @@ def deal(crop_size,path,mask_path,out_path,js):
 
 if __name__ == '__main__':
 
-    #数据集路径
+    #dataset path
     path = '/home5/hby/PRCC/New_Data/dataset.txt'
-    #细胞核分割与分级掩膜路径
+    #nuclues segmentation and grading mask path
     mask_path = '/home5/gzy/PRCCDataset/Nuclei_Prediction_2000_new'
+    outfiles = '/home5/hby/PRCC/New_Data/crop/'
+    
     fh = open(path, 'r')
     imgs = []
     for line in fh:
@@ -156,14 +158,14 @@ if __name__ == '__main__':
         imgs.append((words[0], int(words[1])))
 
     js=0
-    #核切割大小
+    #the nuclues crop size
     crop_size=32
     for i in imgs:
         js+=1
         print(js)
         slide_name = i[0].split('/')[-2]
         patch_name = i[0].split('/')[-1].strip('.png')
-        out_file = '/home5/hby/PRCC/New_Data/crop/' + str(crop_size) + '/' + slide_name 
+        out_file = outfiles + str(crop_size) + '/' + slide_name 
         if not os.path.exists(out_file):
             os.makedirs(out_file)
         out_path = out_file+'/'+patch_name+'.mat'

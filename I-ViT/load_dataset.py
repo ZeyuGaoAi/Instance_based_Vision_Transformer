@@ -16,7 +16,7 @@ import heapq
     
     
 class load_prcc_dataset_scnn_pos(Dataset):
-    def __init__(self, txt_path, transform=None, train = True, N = 100,nuclues_size = 32):
+    def __init__(self, txt_path, transform=None, train = True, N = 100,nuclues_size = 32,crop_path):
         fh = open(txt_path, 'r')
         imgs = []
         for line in fh:
@@ -29,13 +29,14 @@ class load_prcc_dataset_scnn_pos(Dataset):
         self.train = train
         self.N = N
         self.nuclues_size = nuclues_size
+        self.crop_path = crop_path
 
     def __getitem__(self,index):
         fn, label = self.imgs[index]
         slide_name = fn.split('/')[-2]
         patch_name = fn.split('/')[-1].strip('.png')
         
-        crop_path = '/home5/hby/PRCC/New_Data/crop/' + str(self.nuclues_size) + '/' + slide_name+ '/' + patch_name + '.mat'
+        crop_path = self.crop_path + '/' + str(self.nuclues_size) + '/' + slide_name+ '/' + patch_name + '.mat'
         crop = sio.loadmat(crop_path)
         nuclues = np.array(crop['nucleus'])
         cls_all = np.array(crop['class_all'])[0]
@@ -54,9 +55,8 @@ class load_prcc_dataset_scnn_pos(Dataset):
             #temp =self.transform(self.train)(i)
             patches.append(i)
         
-        
-        pos_path = '/home5/hby/PRCC/New_Data/crop/loc/'+slide_name+'/'+patch_name+'.mat'
-        pos = np.array(sio.loadmat(pos_path)['cls_keep_xy'])
+
+        pos = np.array(crop['cls_keep_xy'])
         pos = pos[:self.N]
         pos_list = [[0,0]for i in range(self.N)]
         pos_list[:len(pos)]=pos
