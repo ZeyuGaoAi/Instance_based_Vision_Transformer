@@ -111,9 +111,9 @@ class VitsCNN_pos(nn.Module):
         # x is a n * num_nuclei * channel
         cls_tokens = self.cls_token.expand(x.shape[0], -1, -1)
         x = torch.cat((cls_tokens, x), dim=1)
-        #核类别嵌入
+
         x = self.position_encoding(x,t)
-        #位置嵌入
+    
         x = self.position_encoding_xy(x,px,py)
         
         x = self.pe_dropout(x)
