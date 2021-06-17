@@ -22,4 +22,4 @@ Then mv the download model files (two files) to [micronet](https://github.com/Ze
 ## Dataset
 The dataset to train the nuclei segmentation and classification (grading) model can be download from [This Link](https://dataset.chenli.group/home/ccrcc-grading)
 
-This dataset is original used for ccRCC grading, but part of the ROIs are selected from pRCC WSIs, cause these two subtyping have a same grading guide line.
+This dataset is original used for ccRCC grading, but part of the ROIs are selected from pRCC WSIs, cause these two subtypes have a same grading guide line.
