@@ -32,11 +32,11 @@ def parse_args():
         '--dataset', default='cifar', help='Dataset names.'
     )
     parser.add_argument('--local_rank', type=int, default = -1)
-    parser.add_argument('--num_heads', type=int, default = 28)
+    parser.add_argument('--num_heads', type=int, default = 12)
     parser.add_argument('--hidden_dim', type=int, default = 128)
-    parser.add_argument('--num_layers', type=int, default = 2)
+    parser.add_argument('--num_layers', type=int, default = 12)
     parser.add_argument('--img_size', type=int, default = 2000)
-    parser.add_argument('--nuclues_size', type=int, default = 32)
+    parser.add_argument('--nuclues_size', type=int, default = 64)
     parser.add_argument('--crop_path', default = '/home5/hby/PRCC/New_Data/crop', help='path to crop_nuclues')
 
     parser.add_argument(
@@ -63,7 +63,7 @@ def parse_args():
     parser.add_argument(
         '--num_nuclei',
         type=int,
-        default=1000,
+        default=500,
         help='The max number of nuclei to use.',
     )
     parser.add_argument(
