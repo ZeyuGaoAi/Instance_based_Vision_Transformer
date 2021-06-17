@@ -1,6 +1,4 @@
-# Vision Transformers
-
-Implementation of [Vision Transformer](https://openreview.net/forum?id=YicbFdNTTy) in PyTorch, a new model to achieve SOTA in vision classification with using transformer style encoders. Associated [blog](https://abhaygupta.dev/blog/vision-transformer) article.
+# Instance Based Vision Transformers
 
 ![ViT](./static/model.jpeg)
 
