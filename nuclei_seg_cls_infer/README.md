@@ -8,9 +8,9 @@ This code is revised from the source code of [HoVerNet](https://github.com/vqdan
 Please set up your enviroment follow https://github.com/vqdang/hover_net/tree/tensorflow-final
 
 ## Usage
-Set up the file_path and out_dir in Demo.ipynb, and run it on jupter.
+Set up the `file_path` and `out_dir` in Demo.ipynb, and run it on jupter.
 
-The predicted result of each ROIs will be save in ".mat" on the out_dir.
+The predicted mask of each ROIs will be save in ".mat" on the `out_dir`.
 
 ## Moder File
 The trained model (mircronet) need to be download from our nextcloud.
