@@ -12,7 +12,7 @@ Set up the `file_path` and `out_dir` in Demo.ipynb, and run it on jupter.
 
 The predicted mask of each ROIs will be save in ".mat" on the `out_dir`.
 
-## Moder File
+## Model File
 The trained model (mircronet) need to be download from our nextcloud.
 
 The link and passwd is shown in [download_link.txt](https://github.com/ZeyuGaoAi/Instance_based_Vision_Transformer/blob/master/nuclei_seg_cls_infer/micronet/download_link.txt)
