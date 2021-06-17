@@ -37,7 +37,7 @@ def parse_args():
     parser.add_argument('--num_layers', type=int, default = 2)
     parser.add_argument('--img_size', type=int, default = 2000)
     parser.add_argument('--nuclues_size', type=int, default = 32)
-    parser.add_argument('--crop_path', default = '/home5/hby/PRCC/New_Data/crop/', help='path to crop_nuclues')
+    parser.add_argument('--crop_path', default = '/home5/hby/PRCC/New_Data/crop', help='path to crop_nuclues')
 
     parser.add_argument(
         '--num_classes',
