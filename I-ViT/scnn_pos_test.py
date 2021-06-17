@@ -46,17 +46,17 @@ def parse_args():
     )
     parser.add_argument(
         '--train_dirs',
-        default='/home5/hby/PRCC/New_Data/trainset.txt',
+        default='../dataset/trainset.txt',
         help='path to training data',
     )
     parser.add_argument(
         '--val_dirs',
-        default='/home5/hby/PRCC/New_Data/validset.txt',
+        default='../dataset/validset.txt',
         help='path to validation data',
     )
     parser.add_argument(
         '--test_dirs',
-        default='/home5/hby/PRCC/New_Data/testset.txt',
+        default='../dataset/testset.txt',
         help='path to test data',
     )
     parser.add_argument(
