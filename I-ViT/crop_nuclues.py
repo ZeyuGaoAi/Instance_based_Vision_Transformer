@@ -148,7 +148,7 @@ if __name__ == '__main__':
     path = '/home5/hby/PRCC/New_Data/dataset.txt'
     #nuclues segmentation and grading mask path
     mask_path = '/home5/gzy/PRCCDataset/Nuclei_Prediction_2000_new'
-    outfiles = '/home5/hby/PRCC/New_Data/crop/'
+    outdir = '/home5/hby/PRCC/New_Data/crop/'
     
     fh = open(path, 'r')
     imgs = []
@@ -165,7 +165,7 @@ if __name__ == '__main__':
         print(js)
         slide_name = i[0].split('/')[-2]
         patch_name = i[0].split('/')[-1].strip('.png')
-        out_file = outfiles + str(crop_size) + '/' + slide_name 
+        out_file = outdir + str(crop_size) + '/' + slide_name 
         if not os.path.exists(out_file):
             os.makedirs(out_file)
         out_path = out_file+'/'+patch_name+'.mat'
