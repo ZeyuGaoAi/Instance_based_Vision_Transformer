@@ -145,10 +145,11 @@ def deal(crop_size,path,mask_path,out_path,js):
 if __name__ == '__main__':
 
     #dataset path
-    path = '/home5/hby/PRCC/New_Data/dataset.txt'
+    path = '../dataset/dataset.txt'
     #nuclues segmentation and grading mask path
-    mask_path = '/home5/gzy/PRCCDataset/Nuclei_Prediction_2000_new'
-    outdir = '/home5/hby/PRCC/New_Data/crop/'
+    mask_path = '../dataset/nuclei_prediction/'
+    #where the instance image, grade and position to save
+    outdir = '../dataset/crops/'
     
     fh = open(path, 'r')
     imgs = []
@@ -159,7 +160,7 @@ if __name__ == '__main__':
 
     js=0
     #the nuclues crop size
-    crop_size=32
+    crop_size=64
     for i in imgs:
         js+=1
         print(js)
