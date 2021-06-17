@@ -13,11 +13,9 @@ conda env create -f environment.yml
 
 Preparing the dataset:
 
-```bash
-mkdir data
-cd data
-ln -s path/to/dataset imagenet
-```
+download the dataset from https://dataset.chenli.group/home/prcc-subtyping
+
+Unzip 1.zip and 2.zip on `../dataset/`
 
 ## Running the Scripts
 
