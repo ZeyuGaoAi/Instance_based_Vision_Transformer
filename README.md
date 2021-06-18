@@ -10,5 +10,5 @@ The i-ViT takes top-K instances as input and aggregates them for capturing both 
 ## Set Up Environment
 
 Our framework is composed by two parts, Please set up two environemnts based on:
--[`./nuclei_seg_cls_infer`](./nuclei_seg_cls_infer)
--[`./I-ViT`](./I-ViT)
+- [`./nuclei_seg_cls_infer`](./nuclei_seg_cls_infer)
+- [`./I-ViT`](./I-ViT)
