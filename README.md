@@ -33,4 +33,4 @@ dataset and used in our paper, download it follow [Segmentation Model File](./nu
 - Train the I-ViT model follow the [Running Scripts](./I-ViT)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE]() file for details
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details
