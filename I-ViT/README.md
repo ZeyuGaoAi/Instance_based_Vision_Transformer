@@ -1,7 +1,5 @@
 # Instance Based Vision Transformers
 
-![ViT](./static/model.jpeg)
-
 
 ## Installation
 
