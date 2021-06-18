@@ -19,6 +19,11 @@ Our framework is composed by two parts, Please set up two environemnts based on:
 
 ## Dataset
 
-Download the nuclei segmentation and classification dataset from [this link]().
+Download the nuclei segmentation and classification dataset from [this link](https://dataset.chenli.group/home/ccrcc-grading).
 
-Download the papillary RCC subtyping dataset from [this link]().
+Download the papillary RCC subtyping dataset from [this link](https://dataset.chenli.group/home/prcc-subtyping).
+
+To use the [micronet](https://www.sciencedirect.com/science/article/pii/S1361841518300628) model trained on nuclei segmentation and classification
+dataset and used in our paper, download it follow [Segmentation Model File](./nuclei_seg_cls_infer)
+
+
