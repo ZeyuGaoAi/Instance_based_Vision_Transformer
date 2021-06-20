@@ -32,6 +32,11 @@ dataset and used in our paper, download it follow [Segmentation Model File](./nu
 (Or download the predicted results from [the same link of pRCC dataset](https://dataset.chenli.group/home/prcc-subtyping))
 - Train the I-ViT model follow the [Running Scripts](./I-ViT)
 
+
+## Citation
+
+If any part of this code is used, please give appropriate citation to our paper.
+
 ## Authors
 - Zeyu Gao (betpotti@gmail.com)
 - Bangyang Hong (hby4732@stu.xjtu.edu.cn)
