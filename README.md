@@ -9,7 +9,7 @@ The whole framework is composed by two parts.
 The instance-based Vision Transformer (i-ViT) for learning robust representations of histopathological images for the pRCC subtyping task by extracting finer features from instance patches (by cropping around segmented nuclei and assigning predicted grades). 
 The i-ViT takes top-K instances as input and aggregates them for capturing both the cellular and cell-layer level patterns by a position-embedding layer, a grade-embedding layer, and a multi-head multi-layer self-attention module. 
 
-[Link]() to MICCAI 2021 paper.
+[Link](https://arxiv.org/abs/2106.12265) to MICCAI 2021 paper.
 
 ## Set Up Environment
 
