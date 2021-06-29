@@ -16,7 +16,7 @@ import heapq
     
     
 class load_prcc_dataset_scnn_pos(Dataset):
-    def __init__(self, txt_path, transform=None, train = True, N = 100,nuclues_size = 32,crop_path):
+    def __init__(self, txt_path, crop_path, transform=None, train = True, N = 100,nuclues_size = 32):
         fh = open(txt_path, 'r')
         imgs = []
         for line in fh:
