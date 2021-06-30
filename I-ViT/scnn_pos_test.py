@@ -8,7 +8,7 @@ import torch.nn as nn
 import torch.backends.cudnn as cudnn
 import tensorboardX
 import numpy as np
-from load_dataset import load_prcc_dataset, load_prcc_dataset_scnn_pos
+from load_dataset import load_prcc_dataset_scnn_pos
 import vit
 import my_transform as T
 from sklearn.metrics import classification_report
